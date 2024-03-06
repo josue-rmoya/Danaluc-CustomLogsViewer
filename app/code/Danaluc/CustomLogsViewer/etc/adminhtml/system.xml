@@ -1,0 +1,56 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="danaluc" translate="label" sortOrder="1010">
+            <label>Danaluc</label>
+        </tab>
+        <section id="custom_logs_viewer" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Custom Logs Viewer</label>
+            <tab>danaluc</tab>
+            <resource>Danaluc_CustomLogsViewer::config</resource>
+            <group id="general_settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General settings</label>
+                <field id="clean_schedule" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Cron Schedule for cleanning logs</label>
+                    <comment>
+                    <![CDATA[
+                        <code> *(1) *(2) *(3) *(4) *(5) </code>
+                        <ul style="margin-left: 2em;">
+                            <li><small>(1) - Minute            (range: 0-59)</small></li>
+                            <li><small>(2) - Hour              (range: 0-23)</small></li>
+                            <li><small>(3) - Day of the Month  (range: 1-31)</small></li>
+                            <li><small>(4) - Month of the Year (range: 1-12)</small></li>
+                            <li><small>(5) - Day of the Week   (range: 1-7, 1 standing for Monday)</small></li>
+                        </ul>
+                        <p><strong>Example: </strong> 0 0 * * * Daily at midnight</p>
+                    ]]>
+                    </comment>
+                </field>
+                <field id="custom_logs_files" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Logs Files</label>
+                    <frontend_model>Danaluc\CustomLogsViewer\Block\Adminhtml\System\Config\Form\Field\CustomLogsFiles</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment>
+                        <![CDATA[
+                        Type custom logs files
+                        <br>
+                        For example:
+                        <table>
+                            <tr>
+                                <td><b>File Label</b></td>
+                                <td><b>Custom Log Filename</b></td>
+                                <td><b>Clean every (days)</b></td>
+                            </tr>
+                            <tr>
+                                <td>My custom log file</td>
+                                <td>customfilename.log</td>
+                                <td>7</td>
+                            </tr>
+                        </table>
+                    ]]>
+                    </comment>
+                </field>
+                <!-- Agrega más campos de configuración según sea necesario -->
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Danaluc_CustomLogsViewer::custom_logs_viewer" title="Custom Logs Viewer"  translate="title" module="Danaluc_CustomLogsViewer" 
+            sortOrder="100" parent="Magento_Reports::report" resource="Danaluc_CustomLogsViewer::custom_logs_viewer"/>
+        <add id="Danaluc_CustomLogsViewer::view_logs_file" title="View Logs Files" translate="title" module="Danaluc_CustomLogsViewer"
+             sortOrder="10" parent="Danaluc_CustomLogsViewer::custom_logs_viewer" action="customlogs/view/logs"
+             target="_blank" resource="Danaluc_CustomLogsViewer::view_logs_file" />
+    </menu>
+</config>
